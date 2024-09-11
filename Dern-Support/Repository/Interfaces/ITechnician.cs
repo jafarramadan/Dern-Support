@@ -20,5 +20,7 @@ namespace Dern_Support.Interfaces
 
         // Method to update the quantity of an inventory item
         Task UpdateInventoryItem(int itemId, InventoryItem updatedItem);
+        // Method to search inventory items by name
+        Task<List<InventoryItem>> SearchInventoryItemsByName(string name);
     }
 }

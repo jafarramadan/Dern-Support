@@ -14,5 +14,9 @@ namespace Dern_Support.Repository.Interfaces
         Task<List<InventoryItem>> ViewInventoryItems();
         // Method for getting support requests by customer name
         Task<List<SupportRequest>> GetSupportRequestsByCustomerName(string customerName);
+        // Method to search inventory items by name
+        Task<List<InventoryItem>> SearchInventoryItemsByName(string name);
+        // Method to get all knowledge base articles
+        Task<List<KnowledgeBaseArticle>> GetKnowledgeBaseArticles();
     }
 }

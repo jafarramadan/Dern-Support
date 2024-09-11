@@ -60,5 +60,12 @@ namespace Dern_Support.Controllers
             await _technicianService.UpdateInventoryItem(id, updatedItem);
             return NoContent();
         }
+        // GET api/technician/inventoryitems/search?name={name}
+        [HttpGet("inventoryitems/search")]
+        public async Task<ActionResult<List<InventoryItem>>> SearchInventoryItems([FromQuery] string name)
+        {
+            var items = await _technicianService.SearchInventoryItemsByName(name);
+            return Ok(items);
+        }
     }
 }

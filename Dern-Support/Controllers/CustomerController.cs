@@ -67,5 +67,19 @@ namespace Dern_Support.Controllers
 
             return Ok(requests);
         }
+        [HttpGet("inventoryitems/search")]
+        public async Task<ActionResult<List<InventoryItem>>> SearchInventoryItems([FromQuery] string name)
+        {
+            var items = await _customerService.SearchInventoryItemsByName(name);
+            return Ok(items);
+        }
+        // GET: api/customer/knowledge-base
+        [AllowAnonymous]
+        [HttpGet("knowledge-base")]
+        public async Task<ActionResult<List<KnowledgeBaseArticle>>> GetKnowledgeBaseArticles()
+        {
+            var articles = await _customerService.GetKnowledgeBaseArticles();
+            return Ok(articles);
+        }
     }
 }

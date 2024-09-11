@@ -42,5 +42,17 @@ namespace Dern_Support.Repository.Services
                                  .Where(sr => sr.CustomerName == customerName)
                                  .ToListAsync();
         }
+        // Method to search inventory items by name
+        public async Task<List<InventoryItem>> SearchInventoryItemsByName(string name)
+        {
+            return await _context.InventoryItems
+                .Where(item => item.Name.Contains(name))
+                .ToListAsync();
+        }
+        // Method to get all knowledge base articles
+        public async Task<List<KnowledgeBaseArticle>> GetKnowledgeBaseArticles()
+        {
+            return await _context.KnowledgeBaseArticles.ToListAsync();
+        }
     }
 }

@@ -36,7 +36,7 @@ namespace MidProject.Repository.Services
             foreach (var role in validRoles) {
                     if (!validRoles.Contains(role))
                     {
-                        throw new ArgumentException($"Invalid role: {role}. Allowed roles are: Admin, Client, Owner, Servicer.");
+                        throw new ArgumentException($"Invalid role: {role}. ");
                     }
                 
             }

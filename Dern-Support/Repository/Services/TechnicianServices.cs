@@ -61,5 +61,12 @@ namespace Dern_Support.Repository.Services
                 await _context.SaveChangesAsync();
             }
         }
+        // Method to search inventory items by name
+        public async Task<List<InventoryItem>> SearchInventoryItemsByName(string name)
+        {
+            return await _context.InventoryItems
+                .Where(item => item.Name.Contains(name))
+                .ToListAsync();
+        }
     }
 }
